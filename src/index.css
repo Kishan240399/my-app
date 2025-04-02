@@ -1,0 +1,164 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Form Containers */
+.form-container {
+  width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Page-Specific Styles */
+.home-container,
+.dashboard-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.home-container h1,
+.dashboard-container h1 {
+  font-size: 2rem;
+  color: #222;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button-container button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  width: 150px; /* Set a fixed width to prevent stretching */
+  text-align: center;
+}
+
+/* Responsive Fix */
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-container button {
+    width: 80%;
+  }
+}
+
+/* Button Colors */
+.login-btn {
+  background: #007bff;
+  color: white;
+}
+
+.login-btn:hover {
+  background: #0056b3;
+}
+
+.register-btn {
+  background: #28a745;
+  color: white;
+}
+
+.register-btn:hover {
+  background: #1e7e34;
+}
+
+.form-container {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.dashboard {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.dashboard button {
+  margin-top: 20px;
+  background-color: red;
+  width: 150px;
+}
