@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./Dashboard.css"; // Import CSS file for styling
 
 const Dashboard = () => {
-  const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
@@ -11,9 +12,19 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard">
-      <h2>Welcome, {user?.fullName || "User"}!</h2>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="dashboard-container">
+      {/* Sidebar */}
+      <div className="sidebar">
+        <ul>
+          <li className="active">Dashboard</li>
+          <li onClick={handleLogout}>Logout</li>
+        </ul>
+      </div>
+
+      {/* Main Content */}
+      <div className="main-content">
+        <h1>Welcome, {user?.username || "User"}!</h1>
+      </div>
     </div>
   );
 };
