@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
-    navigate("/login");
+    navigate("/");
   };
 
   return (

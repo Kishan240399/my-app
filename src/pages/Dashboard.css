@@ -35,7 +35,8 @@
 
 /* Active item */
 .sidebar ul .active {
-  background-color: #bbb; /* Dark grey */
+  color: white;
+  background-color: #0a315e; /* Dark grey */
 }
 
 /* Hover effect */
@@ -48,4 +49,43 @@
   flex-grow: 1;
   padding: 20px;
   text-align: center;
+}
+
+/* Responsive Design for Tablets & Mobiles */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .sidebar ul li {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar ul li {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
 }
