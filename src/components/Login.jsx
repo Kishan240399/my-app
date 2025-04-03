@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
 
@@ -6,6 +6,13 @@ const Login = () => {
   const [input, setInput] = useState({ emailOrUsername: "", password: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (user) {
+      navigate("/dashboard");
+    }
+  }, [navigate]);
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -23,7 +30,7 @@ const Login = () => {
 
     if (user) {
       localStorage.setItem("loggedInUser", JSON.stringify(user));
-      navigate("/dashboard"); // Redirect to dashboard
+      navigate("/dashboard");
     } else {
       setError("Invalid username/email or password.");
     }
