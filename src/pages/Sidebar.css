@@ -1,0 +1,69 @@
+/* Sidebar styling */
+.sidebar {
+  height: 100vh; /* Set full height of viewport */
+  background-color: #ddd; /* Adjust as needed */
+  position: fixed; /* Keep it fixed on the left */
+  top: 0;
+  left: 0;
+  width: 250px; /* Adjust width as needed */
+  padding-top: 20px;
+}
+
+/* Remove default list styles */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Remove margin to fix spacing */
+}
+
+/* Sidebar items */
+.sidebar ul li {
+  padding: 15px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #eee;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Active item */
+.sidebar ul .active {
+  color: white;
+  background-color: #0a315e; /* Dark grey */
+}
+
+/* Hover effect */
+.sidebar ul li:hover {
+  background-color: #ccc;
+}
+
+@media (max-width: 480px) {
+  .sidebar ul li {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+
+  .sidebar ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .sidebar ul li {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+  }
+}

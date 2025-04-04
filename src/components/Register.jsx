@@ -21,7 +21,6 @@ const Register = () => {
   const handleRegister = () => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // Check if username or email already exists
     if (
       users.some(
         (u) => u.email === input.email || u.username === input.username
@@ -33,6 +32,10 @@ const Register = () => {
 
     users.push(input);
     localStorage.setItem("users", JSON.stringify(users));
+
+    // Trigger a storage event to notify List.jsx
+    window.dispatchEvent(new Event("storage"));
+
     alert("Registration successful! You can now log in.");
     navigate("/login");
   };

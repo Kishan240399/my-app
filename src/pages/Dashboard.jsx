@@ -1,27 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import "./Dashboard.css"; // Import CSS file for styling
+import Sidebar from "./Sidebar"; // Import Sidebar component
+import "./Dashboard.css";
 
 const Dashboard = () => {
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem("loggedInUser");
-    navigate("/");
-  };
 
   return (
     <div className="dashboard-container">
-      {/* Sidebar */}
-      <div className="sidebar">
-        <ul>
-          <li className="active">Dashboard</li>
-          <li onClick={handleLogout}>Logout</li>
-        </ul>
-      </div>
-
-      {/* Main Content */}
+      <Sidebar /> {/* Sidebar Component */}
       <div className="main-content">
         <h1>Welcome, {user?.username || "User"}!</h1>
       </div>

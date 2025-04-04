@@ -5,6 +5,7 @@ import Register from "./components/Register";
 import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import ProtectedRoute from "./components/ProtectedRoute.jsx"; // Import ProtectedRoute
+import List from "./pages/List.jsx";
 
 const App = () => {
   return (
@@ -13,6 +14,14 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route
+          path="/list"
+          element={
+            <ProtectedRoute>
+              <List />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/dashboard"
           element={
